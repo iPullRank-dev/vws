@@ -1,0 +1,139 @@
+# ==========================================
+# VWS Project Root .gitignore
+# ==========================================
+
+# ------------------------------------------
+# File System & OS
+# ------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ------------------------------------------
+# VWS Backend (Python / FastAPI)
+# ------------------------------------------
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+.env
+.venv
+
+# Database
+# Ignored to prevent committing large/sensitive vector databases
+*.sqlite
+*.sqlite3
+*.db
+vws.sqlite
+
+# Testing & Tools
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# ------------------------------------------
+# VWS Frontend (Node / React / Vite)
+# ------------------------------------------
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+# Note: Ensure you don't commit heavy vite/electron dist output
+dist/
+dist-electron/
+release/
+out/
+build/
+
+# Vite / React logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Pre-upgrade backup (EmbeddingGemma 2)
+_backup_before_embeddinggemma2/
+
+# Pre-upgrade backup (views + vector size)
+_backup_before_views_upgrade/
+
+# Pre-upgrade backup (live log, lab suggestions, drift, link graph)
+_backup_before_round3/
+
+# Pre-upgrade backup (uploaded-file tracking)
+_backup_before_uploads/
+
+# Uploaded CSVs kept per project (services/uploads.py)
+vws-backend/uploads/
+
+# Pre-upgrade backup (backlink imports)
+_backup_before_backlinks/
+
+# Pre-upgrade backup (backlink value + relevance score)
+_backup_before_backlink_value/
+
+# Pre-upgrade backup (installer)
+_backup_before_installer/
+
+# Installer build: downloaded Python (scripts/fetch-python.mjs)
+vws-ui/build-resources/
+
+# SQLite write-ahead log files next to the database
+*.sqlite-wal
+*.sqlite-shm
+
+# Pre-upgrade backup (link-node cleanup)
+_backup_before_link_nodes/
+
+# Transfer bundles / database dumps (never commit: contain crawl data and third-party exports)
+_vws_*.gz
+_vws_*.tgz
+*.sqlite.gz
+
+# FUSE leftovers from deleted open files
+.fuse_hidden*
+
+# Pre-merge DB backup
+_backup_before_merge/
+
+# Sample data and scratch scripts (kept locally, not published)
+*.csv
+!vws-backend/constraints.txt
+vws-backend/scratch_*.py
+vws-backend/check_db.py
+vws-backend/test_analysis.py
+vws-backend/test_crawl.py
+
+# History backup taken before squashing to a single commit
+_backup_before_squash/

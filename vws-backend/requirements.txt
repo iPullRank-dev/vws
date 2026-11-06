@@ -1,0 +1,24 @@
+fastapi
+uvicorn
+sqlite-vec
+# Embeddings: EmbeddingGemma 2 needs sentence-transformers >= 6.1 and transformers >= 5.20.
+# The [image] extra pulls in torchvision, which the model's processor imports even for text.
+# On a CUDA machine install the matching torch/torchvision wheels from pytorch.org first.
+torch
+torchvision
+sentence-transformers[image]>=6.1.0
+transformers>=5.20
+# device_map="auto" when loading the local LLM (services/llm.py)
+accelerate
+huggingface_hub
+trafilatura
+scrapling
+playwright
+pandas
+python-multipart
+pydantic
+numpy
+scikit-learn
+umap-learn
+scipy
+advertools

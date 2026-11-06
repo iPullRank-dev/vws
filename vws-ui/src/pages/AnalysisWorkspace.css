@@ -1,0 +1,321 @@
+.workspace-container {
+  display: flex;
+  height: 100vh;
+  background: var(--bg-dark);
+  overflow: hidden;
+}
+
+input, select, textarea, button {
+  -webkit-app-region: no-drag !important;
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  pointer-events: auto !important;
+}
+
+.sidebar {
+  width: 260px;
+  background: var(--bg-card);
+  border-right: 1px solid var(--border);
+  padding: 1rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  transition: color 0.15s;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.project-info {
+  margin-bottom: 1rem;
+  background: var(--bg-dark);
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.project-info h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.stat strong {
+  color: var(--text-main);
+}
+
+.view-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-bottom: auto;
+}
+
+.tab-group-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  padding: 0.6rem 0.5rem 0.2rem;
+  opacity: 0.6;
+}
+
+.tab-group-label:first-child {
+  padding-top: 0;
+}
+
+.view-tabs button {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  text-align: left;
+  padding: 0.45rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.view-tabs .tab-emoji {
+  font-size: 0.9rem;
+  width: 1.1rem;
+  text-align: center;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.view-tabs button:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+}
+
+.view-tabs button.active {
+  background: var(--accent);
+  color: white;
+}
+
+.upload-section {
+  margin-top: 2rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.upload-section h3 {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.upload-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--bg-dark);
+  border: 1px dashed var(--border);
+  padding: 0.75rem;
+  border-radius: 6px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: 0.2s;
+}
+
+.upload-btn:hover {
+  border-color: var(--accent);
+  color: var(--text-main);
+}
+
+.visualization-area {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1.5rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.vis-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.vis-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.distance-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.distance-selector select {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  outline: none;
+}
+
+/* The card sizes to its content (fixed-height map + optional fixed-height
+   keyword table). .visualization-area scrolls if the total height exceeds
+   the viewport. No flex:1 chain — that was fighting with the inner heights. */
+.vis-content {
+  flex-shrink: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.placeholder-viz {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  font-family: monospace;
+}
+
+/* View description banner */
+.view-description {
+  background: rgba(59, 130, 246, 0.06);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.view-description p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Quick Wins summary panel */
+.quick-wins {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.quick-wins-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.quick-wins-grid {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.qw-card {
+  flex: 1;
+  min-width: 160px;
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.qw-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.qw-stat {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0.15rem 0;
+}
+
+.qw-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+.qw-critical { border-left: 2px solid #ef4444; }
+.qw-critical .qw-stat { color: #ef4444; }
+.qw-critical svg { color: #ef4444; }
+
+.qw-warn { border-left: 2px solid #f59e0b; }
+.qw-warn .qw-stat { color: #f59e0b; }
+.qw-warn svg { color: #f59e0b; }
+
+.qw-good { border-left: 2px solid #10b981; }
+.qw-good .qw-stat { color: #10b981; }
+.qw-good svg { color: #10b981; }
+
+.qw-info { border-left: 2px solid #3b82f6; }
+.qw-info .qw-stat { color: #3b82f6; }
+.qw-info svg { color: #3b82f6; }
+
+/* Sidebar stat with project name improvements */
+.project-info h2 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+}
+
+.vis-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  letter-spacing: 0;
+  color: var(--text-main);
+}
